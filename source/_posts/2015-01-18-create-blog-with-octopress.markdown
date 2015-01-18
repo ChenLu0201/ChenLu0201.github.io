@@ -37,7 +37,8 @@ rake install
 rake setup_github_pages
 {% endcodeblock %}
 
-这个任务将提示你输入刚才的仓库地址。它帮你完成了一下工作：
+这个任务将提示你输入刚才的仓库地址。它帮你完成了以下工作：
+
 1. 提示用户输入并存储远程仓库路径。
 2. 将本地仓库的git remote做调整，imathis/octopress将有origin变为octopress.
 3. 将输入的仓库地址设置为defalut origin remote.
