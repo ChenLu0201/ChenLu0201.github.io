@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[My Octopress Blog]]></title>
+  <link href="http://chenlu0201.github.io/atom.xml" rel="self"/>
+  <link href="http://chenlu0201.github.io/"/>
+  <updated>2015-01-18T18:29:15+08:00</updated>
+  <id>http://chenlu0201.github.io/</id>
+  <author>
+    <name><![CDATA[Your Name]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[使用Octopress创建个人blog]]></title>
+    <link href="http://chenlu0201.github.io/blog/2015/01/18/create-blog-with-octopress/"/>
+    <updated>2015-01-18T13:02:35+08:00</updated>
+    <id>http://chenlu0201.github.io/blog/2015/01/18/create-blog-with-octopress</id>
+    <content type="html"><![CDATA[<h2>环境设置</h2>
+
+<ol>
+<li>安装<a href="http://http://git-scm.com/">Git</a></li>
+<li>安装Ruby 1.9.3或者更高版本。可以使用<a href="http://octopress.org/docs/setup/rbenv/">rbenv</a>或者<a href="http://http://octopress.org/docs/setup/rvm/">RVM</a>安装ruby</li>
+</ol>
+
+
+<p> 如果<code>ruby --verion</code>显示你的版本不是或者高于1.9.2，请参考使用<a href="http://octopress.org/docs/setup/rbenv/">rbenv</a>或者<a href="http://http://octopress.org/docs/setup/rvm/">RVM</a>安装Ruby</p>
+
+<h2>设置Octopress</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git://github.com/imathis/octopress.git octopress
+</span><span class='line'>cd octopress</span></code></pre></td></tr></table></div></figure>
+
+
+<p>然后，安装依赖</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gem install bundler
+</span><span class='line'>rbenv rehash    # If you use rbenv, rehash to be able to run the bundle command
+</span><span class='line'>bundle install</span></code></pre></td></tr></table></div></figure>
+
+
+<p>安装默认的主题</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake install</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+</feed>
