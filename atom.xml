@@ -4,7 +4,7 @@
   <title><![CDATA[Lane's Blog]]></title>
   <link href="http://chenlu0201.github.io/atom.xml" rel="self"/>
   <link href="http://chenlu0201.github.io/"/>
-  <updated>2015-01-18T23:36:43+08:00</updated>
+  <updated>2015-01-18T23:40:30+08:00</updated>
   <id>http://chenlu0201.github.io/</id>
   <author>
     <name><![CDATA[Chen Lu]]></name>
@@ -59,13 +59,17 @@
 </pre></td><td class='code'><pre><code class=''><span class='line'>rake setup_github_pages</span></code></pre></td></tr></table></div></figure>
 
 
-<p>这个任务将提示你输入刚才的仓库地址。它帮你完成了一下工作：
-1. 提示用户输入并存储远程仓库路径。
-2. 将本地仓库的git remote做调整，imathis/octopress将有origin变为octopress.
-3. 将输入的仓库地址设置为defalut origin remote.
-4. 将本地分支从master切换到source上。
-5. 根据仓库地址配置blog url。
-6. 在_deploy目录下配置部署用的master分支。</p>
+<p>这个任务将提示你输入刚才的仓库地址。它帮你完成了一下工作：</p>
+
+<ol>
+<li>提示用户输入并存储远程仓库路径。</li>
+<li>将本地仓库的git remote做调整，imathis/octopress将有origin变为octopress.</li>
+<li>将输入的仓库地址设置为defalut origin remote.</li>
+<li>将本地分支从master切换到source上。</li>
+<li>根据仓库地址配置blog url。</li>
+<li>在_deploy目录下配置部署用的master分支。</li>
+</ol>
+
 
 <p>接下来执行</p>
 
