@@ -9,7 +9,7 @@
   <meta name="author" content="Chen Lu">
 
   
-  <meta name="description" content="2005年，由于linux内核开发团队当时使用的BitKeeper VCS不能满足需要，Linus希望寻求其它的VCS能满足以下需求： Facilitate Distributed Development
+  <meta name="description" content="2005年，由于linux内核开发团队当时使用的BitKeeper VCS不能满足需要，Linus希望找到一个VCS能满足足以下需求： Facilitate Distributed Development
 Scale to Handle Thousands of Developers &hellip;">
   
 
@@ -93,7 +93,7 @@ Scale to Handle Thousands of Developers &hellip;">
   </header>
 
 
-  <div class="entry-content"><p>2005年，由于linux内核开发团队当时使用的BitKeeper VCS不能满足需要，Linus希望寻求其它的VCS能满足以下需求：</p>
+  <div class="entry-content"><p>2005年，由于linux内核开发团队当时使用的BitKeeper VCS不能满足需要，Linus希望找到一个VCS能满足足以下需求：</p>
 
 <ul>
 <li>Facilitate Distributed Development</li>
@@ -110,11 +110,11 @@ Scale to Handle Thousands of Developers &hellip;">
 </ul>
 
 
-<p>遗憾没有找到合适可用的，最后决定开发自己的VCS，也就是后来的Git。 本篇接下来将介绍使Git具有以上特性的基础&ndash;Git的存储对象模型。</p>
+<p>遗憾找不到合适可用的VCS。最后开发团队决定开发自己的VCS系统，也就是后来的Git。 本篇接下来将介绍使Git具有以上特性的基础 &ndash; Git的存储对象模型。</p>
 
 <h2>Git仓库（Git Repository）</h2>
 
-<p>Git仓库是一个记录和管理工程版本和历史的数据仓库。Git与其它VCSs的区别在于它不仅有所有工作目录的拷贝，同事还有使其工作的仓库自身的拷贝。同时还对每个站点，每个用户，每个仓库维护了一组配置信息。Git仓库维护了两种基础的数据结构：对象存储和索引，所有的文件都存储在工作目录的跟路径的.git目录下。Git的对象存储经过了精心的设计，能支持分布式VCS的高效拷贝；Git索引由每个本地仓库自己维护的临时数据，可以根据用户的需要灵活的更改。</p>
+<p>Git仓库是一个记录和管理工程版本和历史的数据仓库。Git与其它VCSs的区别在于它不仅有工作目录所有内容的拷贝，还有使Git工作的仓库拷贝。同时还对每个站点，每个用户，每个仓库维护了一组配置信息。Git仓库维护了两种基础的数据结构：对象存储和索引，所有的文件都存储在工作目录的跟路径的.git目录下。Git的对象存储经过了精心的设计，能支持分布式的高效拷贝；Git索引用来存储每个本地仓库自己的临时数据，可以根据用户的需要灵活的更改。</p>
 
 <h2>Git对象类型</h2>
 
