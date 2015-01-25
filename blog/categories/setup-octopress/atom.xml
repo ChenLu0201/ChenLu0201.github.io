@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Setup Octopress | Lane's Blog]]></title>
   <link href="http://chenlu0201.github.io/blog/categories/setup-octopress/atom.xml" rel="self"/>
   <link href="http://chenlu0201.github.io/"/>
-  <updated>2015-01-19T00:34:36+08:00</updated>
+  <updated>2015-01-26T00:38:58+08:00</updated>
   <id>http://chenlu0201.github.io/</id>
   <author>
     <name><![CDATA[Chen Lu]]></name>
@@ -99,6 +99,8 @@
 
 <p>如果你已经编辑好了你的post，接下来执行rake generate; rake deploy之后，访问<code>https://username.github.io</code>,你将看到自己的blog主页。
 到此，你就掌握了怎样使用octopress搭建自己的blog系统。 当然让后续还有很多工作要做，比如配置个性化的域名，设计个性化的主题，为blog添加评论系统等。后续将逐渐补充。</p>
+
+<p>更多详细内容，请参考<a href="http://octopress.org/">Octopress</a>主页。</p>
 ]]></content>
   </entry>
   
