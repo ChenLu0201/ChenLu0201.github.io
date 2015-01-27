@@ -74,3 +74,5 @@ rake new_post["my new post"]
 
 如果你已经编辑好了你的post，接下来执行rake generate; rake deploy之后，访问`https://username.github.io`,你将看到自己的blog主页。
 到此，你就掌握了怎样使用octopress搭建自己的blog系统。 当然让后续还有很多工作要做，比如配置个性化的域名，设计个性化的主题，为blog添加评论系统等。后续将逐渐补充。
+
+更多详细内容，请参考[Octopress](http://octopress.org/)主页。
