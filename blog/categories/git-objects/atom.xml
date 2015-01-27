@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Git Objects | Lane's Blog]]></title>
   <link href="http://chenlu0201.github.io/blog/categories/git-objects/atom.xml" rel="self"/>
   <link href="http://chenlu0201.github.io/"/>
-  <updated>2015-01-26T00:49:00+08:00</updated>
+  <updated>2015-01-27T23:24:26+08:00</updated>
   <id>http://chenlu0201.github.io/</id>
   <author>
     <name><![CDATA[Chen Lu]]></name>
@@ -74,6 +74,16 @@
 <h2>Index</h2>
 
 <p>Index是用来描述整个仓库目录结构的，临时、动态的二进制文件。更具体一点讲，Index包含某一时刻整个工程全部结构。整个工程的状态可以由工程历史中任意时间的一个Commit对象和一个Tree对象来获取。Git区别于其它VCS的一个核心特性是它提供了设计良好的方法来修改Index。Index同时能将增量开发和提交的内容区分开来。一般，开发人员会频繁的修改、删除、回退文件，Index用来记录那些已经修改完毕，并可以用于提交的内容，同时也可以从Index中取消修改。被Index记录的文件，才会被提交到远程仓库。</p>
+
+<p>接下来，我们来通过一个例子来看看git的对象是怎么工作的。在我们的根路径下有两个文件，我们进行第一次提交，并为第一次提交指定一个tag。git对象的结构将会按下图的结构进行组织:</p>
+
+<p><img src="/images/post20150125/obj-tree-1.jpg" title="&lsquo;objects structure after initial commit&rsquo; 1024 652" ></p>
+
+<p>在此基础上，我们在根路径下新建一个目录， 并在该目录下添加一个文件，然后，我们提交修改。Git仓库的对象结构将更新为如下图所示的结构：</p>
+
+<p><img src="/images/post20150125/obj-tree-2.jpg" title="&lsquo;objects structure after updating&rsquo; 987 1022" ></p>
+
+<p>通过上面的例子，我相信大家对git中的四种对象有了更好地认识。更多Git内容将在以后的blog中继续介绍。</p>
 ]]></content>
   </entry>
   
