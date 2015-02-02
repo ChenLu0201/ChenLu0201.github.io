@@ -9,8 +9,8 @@
   <meta name="author" content="Chen Lu">
 
   
-  <meta name="description" content="2005年，由于linux内核开发团队当时使用的BitKeeper VCS不能满足需要，Linus希望找到一个VCS能满足足以下需求： Facilitate Distributed Development
-Scale to Handle Thousands of Developers &hellip;">
+  <meta name="description" content="在CVS系统中，我们经常使用diff命令查看文件的修改记录。本章将介绍在Git中怎样进行diff，以及Git diff的一些特殊使用方法。 Git diff命令的几种形式 git diff 比较工作路径和索引中文件的区别。他将显示工作路径下需要添加至索引中的内容。
+git diff commit &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -71,6 +71,58 @@ Scale to Handle Thousands of Developers &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/02/02/introduction-of-git-diff/">Git Diff介绍</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-02-02T00:14:54+08:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>2</span><span class='date-suffix'>nd</span>, <span class='date-year'>2015</span></span> <span class='time'>12:14 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>在CVS系统中，我们经常使用diff命令查看文件的修改记录。本章将介绍在Git中怎样进行diff，以及Git diff的一些特殊使用方法。</p>
+
+<h2>Git diff命令的几种形式</h2>
+
+<ul>
+<li><p>git diff</p>
+
+<p>比较工作路径和索引中文件的区别。他将显示工作路径下需要添加至索引中的内容。</p></li>
+<li><p>git diff commit</p>
+
+<p>比较工作路径和指定提交之间的区别。</p></li>
+<li><p>git diff &ndash;cached commit</p>
+
+<p>比较添加至索引的内容和指定提交之间的区别。</p></li>
+<li><p>git diff commit commit</p>
+
+<p>比较任意指定的两个提交之间的区别。</p></li>
+</ul>
+
+
+<p>通过下图我们将对以上命令的使用有更直观的了解：
+<img src="/images/post20150201/git-diff.jpg" title="'git diff commands'" ></p>
+
+<h1>#</h1>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -298,6 +350,10 @@ Scale to Handle Thousands of Developers &hellip;">
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/02/02/introduction-of-git-diff/">Git Diff介绍</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2015/01/25/objects-in-git/">Git中的存储对象</a>

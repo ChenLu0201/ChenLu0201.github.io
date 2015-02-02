@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Git Diff | Lane's Blog]]></title>
+  <link href="http://chenlu0201.github.io/blog/categories/git-diff/atom.xml" rel="self"/>
+  <link href="http://chenlu0201.github.io/"/>
+  <updated>2015-02-03T01:25:21+08:00</updated>
+  <id>http://chenlu0201.github.io/</id>
+  <author>
+    <name><![CDATA[Chen Lu]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Git Diff介绍]]></title>
+    <link href="http://chenlu0201.github.io/blog/2015/02/02/introduction-of-git-diff/"/>
+    <updated>2015-02-02T00:14:54+08:00</updated>
+    <id>http://chenlu0201.github.io/blog/2015/02/02/introduction-of-git-diff</id>
+    <content type="html"><![CDATA[<p>在CVS系统中，我们经常使用diff命令查看文件的修改记录。本章将介绍在Git中怎样进行diff，以及Git diff的一些特殊使用方法。</p>
+
+<h2>Git diff命令的几种形式</h2>
+
+<ul>
+<li><p>git diff</p>
+
+<p>比较工作路径和索引中文件的区别。他将显示工作路径下需要添加至索引中的内容。</p></li>
+<li><p>git diff commit</p>
+
+<p>比较工作路径和指定提交之间的区别。</p></li>
+<li><p>git diff &ndash;cached commit</p>
+
+<p>比较添加至索引的内容和指定提交之间的区别。</p></li>
+<li><p>git diff commit commit</p>
+
+<p>比较任意指定的两个提交之间的区别。</p></li>
+</ul>
+
+
+<p>通过下图我们将对以上命令的使用有更直观的了解：
+<img src="/images/post20150201/git-diff.jpg" title="&lsquo;git diff commands&rsquo;" ></p>
+
+<h1>#</h1>
+]]></content>
+  </entry>
+  
+</feed>
