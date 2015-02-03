@@ -4,7 +4,7 @@
   <title><![CDATA[Lane's Blog]]></title>
   <link href="http://chenlu0201.github.io/atom.xml" rel="self"/>
   <link href="http://chenlu0201.github.io/"/>
-  <updated>2015-02-03T01:25:21+08:00</updated>
+  <updated>2015-02-03T09:25:15+08:00</updated>
   <id>http://chenlu0201.github.io/</id>
   <author>
     <name><![CDATA[Chen Lu]]></name>
@@ -18,7 +18,7 @@
     <link href="http://chenlu0201.github.io/blog/2015/02/02/introduction-of-git-diff/"/>
     <updated>2015-02-02T00:14:54+08:00</updated>
     <id>http://chenlu0201.github.io/blog/2015/02/02/introduction-of-git-diff</id>
-    <content type="html"><![CDATA[<p>在CVS系统中，我们经常使用diff命令查看文件的修改记录。本章将介绍在Git中怎样进行diff，以及Git diff的一些特殊使用方法。</p>
+    <content type="html"><![CDATA[<p>在我们使用VCS时，相信大家最常使用的应该是diff命令了。我们需要比较当前修改了什么，某次提交修改了什么，不同提交之间的差异是什么等各种比较。在使用Git时，也不例外。本文将介绍在Git中怎样使用Git diff，以及它的一些特殊使用方法。</p>
 
 <h2>Git diff命令的几种形式</h2>
 
@@ -29,7 +29,7 @@
 <li><p>git diff commit</p>
 
 <p>比较工作路径和指定提交之间的区别。</p></li>
-<li><p>git diff &ndash;cached commit</p>
+<li><p>git diff -&#45;cached commit</p>
 
 <p>比较添加至索引的内容和指定提交之间的区别。</p></li>
 <li><p>git diff commit commit</p>
@@ -38,10 +38,11 @@
 </ul>
 
 
-<p>通过下图我们将对以上命令的使用有更直观的了解：
-<img src="http://chenlu0201.github.io/images/post20150201/git-diff.jpg" title="'git diff commands'" ></p>
+<p><em>通过下图我们将对以上命令的使用有更直观的了解：</em></p>
 
-<h1>#</h1>
+<p><img class="center" src="http://chenlu0201.github.io/images/post20150201/git-diff.jpg" title="'git diff commands'" ></p>
+
+<h2>next part</h2>
 ]]></content>
   </entry>
   
