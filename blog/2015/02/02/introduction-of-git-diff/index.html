@@ -23,9 +23,7 @@
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Lane's Blog" type="application/atom+xml">
   <script src="/javascripts/modernizr-2.0.js"></script>
-  <!--
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  &#8211;>
+  <!--script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script-->
   <script src="/javascripts/libs/jquery.min.js"></script>
   <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
@@ -113,7 +111,33 @@
 
 <p><img class="center" src="/images/post20150201/git-diff.jpg" title="'git diff commands'" ></p>
 
-<h2>next part</h2>
+<h2>git diff使用的参数</h2>
+
+<ul>
+<li><p>&ndash;M</p>
+
+<p>只检测重命名的文件。</p></li>
+<li><p>-w or &ndash;ignore-all-space</p>
+
+<p>忽略空白字符比较。</p></li>
+<li><p>&ndash;stat</p>
+
+<p>在比较结果中添加统计信息，例如修改行数、添加行数、删除行数。</p></li>
+<li><p>&ndash;color</p>
+
+<p>对diff结果进行着色，不同类型修改会用不同的颜色来显示。</p></li>
+</ul>
+
+
+<h2>git diff与git log的区别</h2>
+
+<p><code>git diff branchA branchB</code>和<code>git diff branchA..brancheB</code>等价，比较两个分支之间的差异。<code>git log branchA..branchB</code>是显示branchB中存在，branchA中不存在的提交。</p>
+
+<h2>使用相对提交名</h2>
+
+<p>Git中，除了初始提交，其它的提交节点都有至少一个父亲节点。Git使用符号^用来表示父亲节点，使用符号~来表示前一个提交节点。例如，我们有名为C的分支，我们可以按以下规则来使用相对提交名：</p>
+
+<p>我们可以使用<code>git diff --state master~5 master</code>来得到master分支当前与之前的第五次提交之间的diff统计数据。以上就是git diff命令使用的简要介绍。</p>
 </div>
 
 
