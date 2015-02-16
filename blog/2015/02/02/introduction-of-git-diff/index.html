@@ -109,7 +109,7 @@
 
 <p><em>通过下图我们将对以上命令的使用有更直观的了解：</em></p>
 
-<p><img class="center" src="/images/post20150201/git-diff.jpg" title="'git diff commands'" ></p>
+<p><img class="center" src="/images/post20150202/git-diff.jpg" title="'git diff commands'" ></p>
 
 <h2>git diff使用的参数</h2>
 
@@ -135,7 +135,15 @@
 
 <h2>使用相对提交名</h2>
 
-<p>Git中，除了初始提交，其它的提交节点都有至少一个父亲节点。Git使用符号^用来表示父亲节点，使用符号~来表示前一个提交节点。例如，我们有名为C的分支，我们可以按以下规则来使用相对提交名：</p>
+<p>Git中，除了初始提交，其它的提交节点都有至少一个父亲节点。Git使用符号^用来表示父亲节点，使用符号~来表示前一个提交节点。例如，我们有名为C的分支，例如我们可以按以下规则来使用相对提交名：</p>
+
+<p><img class="center" src="/images/post20150202/relative-commit-1.jpg" width="800" height="600" title="'git relative commit'" ></p>
+
+<p>提交C有三个父节点,可以按如下方式来访问C^1, C^2, C^3.</p>
+
+<p><img class="center" src="/images/post20150202/relative-commit-2.jpg" width="800" height="600" title="'git relative commit'" ></p>
+
+<p>提交C的第一个父节点是C~1, 第二个父节点是C~2, 第三个父节点是C~3.</p>
 
 <p>我们可以使用<code>git diff --state master~5 master</code>来得到master分支当前与之前的第五次提交之间的diff统计数据。以上就是git diff命令使用的简要介绍。</p>
 </div>
