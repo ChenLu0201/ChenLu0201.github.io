@@ -1,0 +1,237 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>三周三页面环境搭建指南 - Lane&#8217;s Blog</title>
+  <meta name="author" content="Chen Lu">
+
+  
+  <meta name="description" content="这次三周三页面workshop的培训内容是怎样设计和实现一个美观的web page，其中涉及到html和css的内容。作为基础，我们首先需要有一个快速的开发环境，本文将为大家介绍一个高效的前端页面开发环境和一组实用的提升前端开发效率的工具。 环境准备 Ruby安装 开发环境是一个基于Ruby的工程 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://chenlu0201.github.io/blog/2015/03/15/setup-environment-for-3pages-in-3weeks/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Lane's Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <!--script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script-->
+  <script src="/javascripts/libs/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<!--link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css" -->
+<!--link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css" -->
+<link href="/stylesheets/screen.css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="/stylesheets/screen.css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Lane&#8217;s Blog</a></h1>
+  
+    <h2>blog for life.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="chenlu0201.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">三周三页面环境搭建指南</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-03-15T12:33:51+08:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>15</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>12:33 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>这次三周三页面workshop的培训内容是怎样设计和实现一个美观的web page，其中涉及到html和css的内容。作为基础，我们首先需要有一个快速的开发环境，本文将为大家介绍一个高效的前端页面开发环境和一组实用的提升前端开发效率的工具。</p>
+
+<h2>环境准备</h2>
+
+<ul>
+<li><p>Ruby安装</p>
+
+<p>开发环境是一个基于Ruby的工程，所以需要先安装Ruby. 由于Mac OS自带的ruby不方便管理，建议使用<code>rvm</code>(<a href="https://rvm.io/rvm/install">怎么安装rvm</a>)来管理你的<code>ruby</code>(<a href="https://rvm.io/rubies/installing">怎么安装ruby</a>)。</p></li>
+<li><p>准备开发工程</p>
+
+<p>开发的<a href="https://github.com/ChenLu0201/static-pages-boilerplate.git">模板工程</a>已经为大家准备好。这个<code>Ruby</code>工程使用基于sass的compass库。同时使用guard来实时编译工程，使我们能及时的看到最新的修改。clone到本地之后，在根路径下执行<code>bundle install</code>来执行一些初始化操作。</p></li>
+</ul>
+
+
+<h2>工具安装</h2>
+
+<ul>
+<li><p>sublime编辑器</p>
+
+<p> <a href="http://www.sublimetext.com/3">Sublime</a>是一个非常好用的，现代的，跨平台的编辑器，你可以在Windows，Linux以及Mac OSX上使用它。虽然它不是免费的，但是如果你不购买，功能上没有任何的限制（除了不定时的弹出一个对话框外）。同时，它非常易于扩展。
+ 当你下载并安装完sublime之后，我们首先需要安装<a href="https://sublime.wbond.net/installation">Packge Control</a>来管理其它插件。安装了Package Control之后，我们来安装以下插件：</p>
+
+<ol>
+<li><a href="http://emmet.io/">Emmet</a>(The Essential Toolkit for Web-developers)</li>
+<li><a href="https://github.com/victorporof/Sublime-HTMLPrettify">HTML-CSS-JS Prettify</a>(HTML/CSS/JS Formatter)</li>
+<li><a href="http://www.jisaacks.com/gitgutter">GitGutter</a>（在sublime的编辑窗口显示文本的git状态）</li>
+</ol>
+
+
+<p> 安装插件非常容易，<code>command + shift + p</code>打开命令行窗口，输入<code>install package</code></p></li>
+</ul>
+
+
+<p><img class="center" src="/images/post20150315/command+shift+p.jpg" width="800" height="600" title="'open cmd on sublime'" ></p>
+
+<p>   然后输入需要安装的插件名称</p>
+
+<p><img class="center" src="/images/post20150315/install-package.jpg" width="800" height="600" title="'install package'" ></p>
+
+<ul>
+<li>LiveReload
+这是一个浏览器插件，能实时的刷新页面来查看修改。在chrome上，我们可以安装</li>
+</ul>
+
+
+<p><img class="center" src="/images/post20150315/install-liveReload.jpg" width="800" height="600" title="'install liveReload'" ></p>
+
+<p>完成以上步骤，大家的开发环境也就搭建好了，现在我们可以开动起来实现自己的页面了。</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Chen Lu</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2015-03-15T12:33:51+08:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>15</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>12:33 pm</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/3-pages-in-3-weeks/'>3 pages in 3 weeks</a>, <a class='category' href='/blog/categories/setup-environment/'>setup environment</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2015/02/02/introduction-of-git-diff/" title="Previous Post: Git diff介绍">&laquo; Git diff介绍</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/03/15/setup-environment-for-3pages-in-3weeks/">三周三页面环境搭建指南</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/02/02/introduction-of-git-diff/">Git Diff介绍</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/01/25/objects-in-git/">Git中的存储对象</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/01/18/create-blog-with-octopress/">使用Octopress创建个人blog</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Chen Lu -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
