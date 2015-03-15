@@ -29,18 +29,19 @@ categories: [3 pages in 3 weeks, setup environment]
    3. [GitGutter](http://www.jisaacks.com/gitgutter)（在sublime的编辑窗口显示文本的git状态）
 
 
-   安装插件非常容易，`command + shift + p`打开命令行窗口，输入`install package`
+   安装插件非常容易，`command + shift + p`打开命令行窗口，输入`install package`:
 
 {% img center /images/post20150315/command+shift+p.jpg 800 600 'open cmd on sublime' %}
 
-   然后输入需要安装的插件名称
+   然后输入需要安装的插件名称:
 
 {% img center /images/post20150315/install-package.jpg 800 600 'install package' %}
 
 
 - LiveReload
-  这是一个浏览器插件，能实时的刷新页面来查看修改。在chrome上，我们可以安装
 
-{% img center /images/post20150315/install-liveReload.jpg 800 600 'install liveReload' %}
+  这是一个浏览器插件，能实时的刷新页面来查看修改。在chrome上，我们可以在extensions中搜索并安装它:
+
+{% img center /images/post20150315/install-livereload.jpg 800 600 'install liveReload' %}
 
 完成以上步骤，大家的开发环境也就搭建好了，现在我们可以开动起来实现自己的页面了。
