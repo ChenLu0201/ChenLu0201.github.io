@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Setup Environment | Lane's Blog]]></title>
   <link href="http://chenlu0201.github.io/blog/categories/setup-environment/atom.xml" rel="self"/>
   <link href="http://chenlu0201.github.io/"/>
-  <updated>2015-03-15T14:44:47+08:00</updated>
+  <updated>2015-03-15T14:49:54+08:00</updated>
   <id>http://chenlu0201.github.io/</id>
   <author>
     <name><![CDATA[Chen Lu]]></name>
@@ -47,19 +47,20 @@
 </ol>
 
 
-<p> 安装插件非常容易，<code>command + shift + p</code>打开命令行窗口，输入<code>install package</code></p></li>
+<p> 安装插件非常容易，<code>command + shift + p</code>打开命令行窗口，输入<code>install package</code>:</p></li>
 </ul>
 
 
 <p><img class="center" src="/images/post20150315/command+shift+p.jpg" width="800" height="600" title="&lsquo;open cmd on sublime&rsquo;" ></p>
 
-<p>   然后输入需要安装的插件名称</p>
+<p>   然后输入需要安装的插件名称:</p>
 
 <p><img class="center" src="/images/post20150315/install-package.jpg" width="800" height="600" title="&lsquo;install package&rsquo;" ></p>
 
 <ul>
-<li>LiveReload
-这是一个浏览器插件，能实时的刷新页面来查看修改。在chrome上，我们可以安装</li>
+<li><p>LiveReload</p>
+
+<p>这是一个浏览器插件，能实时的刷新页面来查看修改。在chrome上，我们可以在extensions中搜索并安装它:</p></li>
 </ul>
 
 
