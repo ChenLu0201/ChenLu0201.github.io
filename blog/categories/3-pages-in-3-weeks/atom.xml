@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 3 Pages in 3 Weeks | Lane's Blog]]></title>
   <link href="http://chenlu0201.github.io/blog/categories/3-pages-in-3-weeks/atom.xml" rel="self"/>
   <link href="http://chenlu0201.github.io/"/>
-  <updated>2015-03-15T14:37:46+08:00</updated>
+  <updated>2015-03-15T14:44:47+08:00</updated>
   <id>http://chenlu0201.github.io/</id>
   <author>
     <name><![CDATA[Chen Lu]]></name>
@@ -63,7 +63,7 @@
 </ul>
 
 
-<p><img class="center" src="/images/post20150315/install-liveReload.jpg" width="800" height="600" title="&lsquo;install liveReload&rsquo;" ></p>
+<p><img class="center" src="/images/post20150315/install-livereload.jpg" width="800" height="600" title="&lsquo;install liveReload&rsquo;" ></p>
 
 <p>完成以上步骤，大家的开发环境也就搭建好了，现在我们可以开动起来实现自己的页面了。</p>
 ]]></content>
