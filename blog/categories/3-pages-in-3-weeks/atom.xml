@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 3 Pages in 3 Weeks | Lane's Blog]]></title>
   <link href="http://chenlu0201.github.io/blog/categories/3-pages-in-3-weeks/atom.xml" rel="self"/>
   <link href="http://chenlu0201.github.io/"/>
-  <updated>2015-03-16T10:05:12+08:00</updated>
+  <updated>2015-03-17T10:17:11+08:00</updated>
   <id>http://chenlu0201.github.io/</id>
   <author>
     <name><![CDATA[Chen Lu]]></name>
@@ -28,7 +28,7 @@
 <p>开发环境是一个基于Ruby的工程，所以需要先安装Ruby. 由于Mac OS自带的ruby不方便管理，建议使用<code>rvm</code>(<a href="https://rvm.io/rvm/install">怎么安装rvm</a>)来管理你的<code>ruby</code>(<a href="https://rvm.io/rubies/installing">怎么安装ruby</a>)。</p></li>
 <li><p>准备开发工程</p>
 
-<p>开发的<a href="https://github.com/ChenLu0201/static-pages-boilerplate.git">模板工程</a>已经为大家准备好。这个<code>Ruby</code>工程使用基于sass的compass库。同时使用guard来实时编译工程，使我们能及时的看到最新的修改。clone到本地之后，在根路径下执行<code>bundle install</code>来执行一些初始化操作。</p></li>
+<p>开发的<a href="https://github.com/ChenLu0201/static-pages-boilerplate.git">模板工程</a>已经为大家准备好。这个<code>Ruby</code>工程使用基于sass的compass库。同时使用guard来实时编译工程，使我们能及时的看到最新的修改。Fork并Clone到本地之后，在根路径下执行<code>bundle install</code>来执行一些初始化操作。</p></li>
 </ul>
 
 
