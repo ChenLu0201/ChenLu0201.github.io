@@ -6,7 +6,7 @@ comments: true
 categories: [3 pages in 3 weeks, setup environment]
 ---
 
-这次三周三页面workshop的培训内容是怎样设计和实现一个美观的web page，其中涉及到html和css的内容。作为基础，我们首先需要有一个快速的开发环境，本文将指导大家搭建一个高效的前端页面开发环境和一组实用的提升前端开发效率的工具。
+   这次三周三页面workshop的培训内容是怎样设计和实现一个美观的web page，其中涉及到html和css的内容。作为基础，我们首先需要有一个快速的开发环境，本文将指导大家搭建一个高效的前端页面开发环境和安装一组实用的提升前端开发效率的工具。
 
 ##环境准备
 - Ruby安装
@@ -15,7 +15,7 @@ categories: [3 pages in 3 weeks, setup environment]
 
 - 准备开发工程
 
-  开发的[模板工程](https://github.com/ChenLu0201/static-pages-boilerplate.git)已经为大家准备好。这个`Ruby`工程使用基于sass的compass库。同时使用guard来实时编译工程，使我们能及时的看到最新的修改。clone到本地之后，在根路径下执行`bundle install`来执行一些初始化操作。
+  开发的[模板工程](https://github.com/ChenLu0201/static-pages-boilerplate.git)已经为大家准备好。这个`Ruby`工程使用基于sass的compass库。同时使用guard来实时编译工程，使我们能及时的看到最新的修改。Fork工程后，clone到本地之后，在根路径下执行`bundle install`来执行一些初始化操作。
 
 ##工具安装
 
