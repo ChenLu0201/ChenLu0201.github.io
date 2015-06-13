@@ -15,7 +15,7 @@ categories: [3 pages in 3 weeks, setup environment]
 
 - 准备开发工程
 
-  开发的[模板工程](https://github.com/ChenLu0201/static-pages-boilerplate.git)已经为大家准备好。这个`Ruby`工程使用基于sass的compass库。同时使用guard来实时编译工程，使我们能及时的看到最新的修改。Fork工程后，clone到本地之后，在根路径下执行`bundle install`来执行一些初始化操作。
+  开发的[模板工程](https://github.com/ChenLu0201/static-pages-boilerplate.git)已经为大家准备好。这个`Ruby`工程使用基于sass的compass库。同时使用guard来实时编译工程，使我们能及时的看到最新的修改。Fork并Clone到本地之后，在根路径下执行`bundle install`来执行一些初始化操作。
 
 ##工具安装
 
