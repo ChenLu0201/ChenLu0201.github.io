@@ -1,0 +1,283 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>使用Octopress创建个人blog - Lane&#8217;s Blog</title>
+  <meta name="author" content="Chen Lu">
+
+  
+  <meta name="description" content="Octopress是基于Jekyll的静态博客引擎，并支持将博客发布到Github Pages, Heroku和Rsync. 本文将指导大家使用Octopress搭建属于你自己的博客系统，并发布到Github Pages上。 环境设置 安装Git
+安装Ruby 1.9.3或者更高版本。 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://chenlu0201.github.io/blog/2015/01/18/create-blog-with-octopress/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Lane's Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <!--script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script-->
+  <script src="/javascripts/libs/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<!--link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css" -->
+<!--link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css" -->
+<link href="/stylesheets/screen.css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="/stylesheets/screen.css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Lane&#8217;s Blog</a></h1>
+  
+    <h2>blog for life.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="chenlu0201.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">使用Octopress创建个人blog</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-01-18T13:02:35+08:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>18</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>1:02 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><a href="http://octopress.org/">Octopress</a>是基于Jekyll的静态博客引擎，并支持将博客发布到<a href="https://pages.github.com/">Github Pages</a>, Heroku和Rsync. 本文将指导大家使用Octopress搭建属于你自己的博客系统，并发布到<a href="https://pages.github.com/">Github Pages</a>上。</p>
+
+<h2>环境设置</h2>
+
+<ol>
+<li>安装<a href="http://http://git-scm.com/">Git</a></li>
+<li>安装Ruby 1.9.3或者更高版本。可以使用<a href="http://octopress.org/docs/setup/rbenv/">rbenv</a>或者<a href="http://http://octopress.org/docs/setup/rvm/">RVM</a>安装ruby。如果<code>ruby --verion</code>显示你的版本不是或者高于1.9.2，请参考使用<a href="http://octopress.org/docs/setup/rbenv/">rbenv</a>或者<a href="http://http://octopress.org/docs/setup/rvm/">RVM</a>安装Ruby</li>
+<li>下载Octopress</li>
+</ol>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git://github.com/imathis/octopress.git octopress
+</span><span class='line'>cd octopress</span></code></pre></td></tr></table></div></figure>
+
+
+<p>然后，安装依赖</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gem install bundler
+</span><span class='line'>rbenv rehash    # If you use rbenv, rehash to be able to run the bundle command
+</span><span class='line'>bundle install</span></code></pre></td></tr></table></div></figure>
+
+
+<p>安装默认的主题</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake install</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>部署blog到Github pages上</h2>
+
+<p>这里将使用Github User/Organization pages来部署blog. 首先创建一个新的Github仓库，仓库的命名格式是<code>username.github.io</code>。<code>username</code>是你的Github账户名。创建好仓库后，我们在上面克隆的octopress目录下执行</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake setup_github_pages</span></code></pre></td></tr></table></div></figure>
+
+
+<p>这个任务将提示你输入刚才的仓库地址。它帮你完成了以下工作：</p>
+
+<ol>
+<li>提示用户输入并存储远程仓库路径。</li>
+<li>将本地仓库的git remote做调整，imathis/octopress将有origin变为octopress.</li>
+<li>将输入的仓库地址设置为defalut origin remote.</li>
+<li>将本地分支从master切换到source上。</li>
+<li>根据仓库地址配置blog url。</li>
+<li>在_deploy目录下配置部署用的master分支。</li>
+</ol>
+
+
+<p>接下来执行</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake generate
+</span><span class='line'>rake deploy</span></code></pre></td></tr></table></div></figure>
+
+
+<p>将为你生成blog的静态页面，并拷贝到_deploy目录下， 同时部署到仓库的master分支上。当提交完你的blog site后， 请不要忘记将blog的源码提交到仓库，做好备份。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git add .
+</span><span class='line'>git commit -m "your message"
+</span><span class='line'>git push origin source</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>写一篇新博客</h2>
+
+<p>octopress提供了一个rake task为你按照约定的命名规则创建一篇blog post.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake new_post["title"]</span></code></pre></td></tr></table></div></figure>
+
+
+<p><code>new_post</code>需要指定post的标题，缺省的post模板类型是<code>markdown</code>.</p>
+
+<p><strong>Example:</strong></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake new_post["my new post"]
+</span><span class='line'># Creates source/_posts/2015-01-18-my-new-post.markdown</span></code></pre></td></tr></table></div></figure>
+
+
+<p>如果你已经编辑好了你的post，接下来执行rake generate; rake deploy之后，访问<code>https://username.github.io</code>,你将看到自己的blog主页。
+到此，你就掌握了怎样使用octopress搭建自己的blog系统。 当然让后续还有很多工作要做，比如配置个性化的域名，设计个性化的主题，为blog添加评论系统等。后续将逐渐补充。</p>
+
+<p>更多详细内容，请参考<a href="http://octopress.org/">Octopress</a>主页。</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Lane</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2015-01-18T13:02:35+08:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>18</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>1:02 pm</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/setup-octopress/'>setup octopress</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+      
+        <a class="basic-alignment right" href="/blog/2015/01/25/objects-in-git/" title="Next Post: Git中的存储对象">Git中的存储对象 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/03/15/setup-environment-for-3pages-in-3weeks/">三周三页面环境搭建指南</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/02/02/introduction-of-git-diff/">Git Diff介绍</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/01/25/objects-in-git/">Git中的存储对象</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/01/18/create-blog-with-octopress/">使用Octopress创建个人blog</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Chen Lu -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

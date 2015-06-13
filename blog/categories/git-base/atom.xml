@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Git Base | Lane's Blog]]></title>
+  <link href="http://chenlu0201.github.io/blog/categories/git-base/atom.xml" rel="self"/>
+  <link href="http://chenlu0201.github.io/"/>
+  <updated>2015-03-17T10:17:11+08:00</updated>
+  <id>http://chenlu0201.github.io/</id>
+  <author>
+    <name><![CDATA[Chen Lu]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Git Diff介绍]]></title>
+    <link href="http://chenlu0201.github.io/blog/2015/02/02/introduction-of-git-diff/"/>
+    <updated>2015-02-02T00:14:54+08:00</updated>
+    <id>http://chenlu0201.github.io/blog/2015/02/02/introduction-of-git-diff</id>
+    <content type="html"><![CDATA[<p>在我们使用VCS时，相信大家最常使用的应该是diff命令了。我们需要比较当前修改了什么，某次提交修改了什么，不同提交之间的差异是什么等各种比较。在使用Git时，也不例外。本文将介绍在Git中怎样使用Git diff，以及它的一些特殊使用方法。</p>
+
+<h2>Git diff命令的几种形式</h2>
+
+<ul>
+<li><p>git diff</p>
+
+<p>比较工作路径和索引中文件的区别。他将显示工作路径下需要添加至索引中的内容。</p></li>
+<li><p>git diff commit</p>
+
+<p>比较工作路径和指定提交之间的区别。</p></li>
+<li><p>git diff -&#45;cached commit</p>
+
+<p>比较添加至索引的内容和指定提交之间的区别。</p></li>
+<li><p>git diff commit commit</p>
+
+<p>比较任意指定的两个提交之间的区别。</p></li>
+</ul>
+
+
+<p><em>通过下图我们将对以上命令的使用有更直观的了解：</em></p>
+
+<p><img class="center" src="/images/post20150202/git-diff.jpg" title="&lsquo;git diff commands&rsquo;" ></p>
+
+<h2>git diff使用的参数</h2>
+
+<ul>
+<li><p>&ndash;M</p>
+
+<p>只检测重命名的文件。</p></li>
+<li><p>-w or &ndash;ignore-all-space</p>
+
+<p>忽略空白字符比较。</p></li>
+<li><p>&ndash;stat</p>
+
+<p>在比较结果中添加统计信息，例如修改行数、添加行数、删除行数。</p></li>
+<li><p>&ndash;color</p>
+
+<p>对diff结果进行着色，不同类型修改会用不同的颜色来显示。</p></li>
+</ul>
+
+
+<h2>git diff与git log的区别</h2>
+
+<p><code>git diff branchA branchB</code>和<code>git diff branchA..brancheB</code>等价，比较两个分支之间的差异。<code>git log branchA..branchB</code>是显示branchB中存在，branchA中不存在的提交。</p>
+
+<h2>使用相对提交名</h2>
+
+<p>Git中，除了初始提交，其它的提交节点都有至少一个父亲节点。Git使用符号^用来表示父亲节点，使用符号~来表示前一个提交节点。例如，我们有名为C的分支，例如我们可以按以下规则来使用相对提交名：</p>
+
+<p><img class="center" src="/images/post20150202/relative-commit-1.jpg" width="800" height="600" title="&lsquo;git relative commit&rsquo;" ></p>
+
+<p>提交C有三个父节点,可以按如下方式来访问C^1, C^2, C^3.</p>
+
+<p><img class="center" src="/images/post20150202/relative-commit-2.jpg" width="800" height="600" title="&lsquo;git relative commit&rsquo;" ></p>
+
+<p>提交C的第一个父节点是C~1, 第二个父节点是C~2, 第三个父节点是C~3.</p>
+
+<p>我们可以使用<code>git diff --state master~5 master</code>来得到master分支当前与之前的第五次提交之间的diff统计数据。以上就是git diff命令使用的简要介绍。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Git中的存储对象]]></title>
+    <link href="http://chenlu0201.github.io/blog/2015/01/25/objects-in-git/"/>
+    <updated>2015-01-25T14:49:06+08:00</updated>
+    <id>http://chenlu0201.github.io/blog/2015/01/25/objects-in-git</id>
+    <content type="html"><![CDATA[<p>2005年，由于linux内核开发团队当时使用的BitKeeper VCS不能满足需要，Linus希望找到一个VCS能满足足以下需求：</p>
+
+<ul>
+<li>Facilitate Distributed Development</li>
+<li>Scale to Handle Thousands of Developers</li>
+<li>Perform Quickly and Eficiently</li>
+<li>Maintain Integrity and Trust</li>
+<li>Enforce Accoutablility</li>
+<li>Immutability</li>
+<li>Atomic Transactions</li>
+<li>Support and Encourage Branched Development</li>
+<li>Complete Repositories</li>
+<li>A Clean Internal Design</li>
+<li>Be Free</li>
+</ul>
+
+
+<p>遗憾找不到合适可用的VCS。最后开发团队决定开发自己的VCS系统，也就是后来的Git。 本篇接下来将介绍使Git具有以上特性的基础 &ndash; Git的存储对象模型。</p>
+
+<h2>Git仓库（Git Repository）</h2>
+
+<p>Git仓库是一个记录和管理工程版本和历史的数据仓库。Git与其它VCSs的区别在于它不仅有工作目录所有内容的拷贝，还有使Git工作的仓库拷贝。同时还对每个站点，每个用户，每个仓库维护了一组配置信息。Git仓库维护了两种基础的数据结构：对象存储和索引，所有的文件都存储在工作目录的跟路径的.git目录下。Git的对象存储经过了精心的设计，能支持分布式的高效拷贝；Git索引用来存储每个本地仓库自己的临时数据，可以根据用户的需要灵活的更改。</p>
+
+<h2>Git对象类型</h2>
+
+<ul>
+<li>Blobs</li>
+</ul>
+
+
+<p>一个Blob对象代表了一个文件某个版本的内容。在计算中，我们需要引用到一些变量和文件，但是又不关心内部的具体数据时，我们经常用<code>Blob</code>[binary large object]来存储数据。Blob数据只存储文件的内容，而不存储任何文件相关的元数据，包括文件名。</p>
+
+<ul>
+<li>Trees</li>
+</ul>
+
+
+<p>一个Tree对象代表了一层目录的信息。它记录了blob对象的标识，路径名和当前目录的一些元数据。它同时可以递归的应用其他的Subtree对象。因此它维护了完成的文件和路径的完整结构。</p>
+
+<ul>
+<li>Commits</li>
+</ul>
+
+
+<p>一个Commit对象存储了对仓库引入的一次修改的元数据，它包括作者，提交人，提交日期，日志信息。每个Commit对象指向了包含工作仓库最新状态完整快照的Tree对象。最初的提交没有父节点，大部分提交都有一个父节点，也有存在两个父节点的情况（比如在merge的情况下）。</p>
+
+<ul>
+<li>Tags</li>
+</ul>
+
+
+<p>一个Tag用来给其它对象指定一个可读的名字，通常是一个Commit。虽然<code>9da581ae67f765c8aac675de87f54a3c5ef6da</code>引用了一个具体的Commit,使用一个更可读的Tag,例如Ver-1.0-Alpha，会更方便。</p>
+
+<h2>Index</h2>
+
+<p>Index是用来描述整个仓库目录结构的，临时、动态的二进制文件。更具体一点讲，Index包含某一时刻整个工程全部结构。整个工程的状态可以由工程历史中任意时间的一个Commit对象和一个Tree对象来获取。Git区别于其它VCS的一个核心特性是它提供了设计良好的方法来修改Index。Index同时能将增量开发和提交的内容区分开来。一般，开发人员会频繁的修改、删除、回退文件，Index用来记录那些已经修改完毕，并可以用于提交的内容，同时也可以从Index中取消修改。被Index记录的文件，才会被提交到远程仓库。</p>
+
+<p>接下来，我们来通过一个例子来看看git的对象是怎么工作的。在我们的根路径下有两个文件，我们进行第一次提交，并为第一次提交指定一个tag。git对象的结构将会按下图的结构进行组织:</p>
+
+<p><img src="/images/post20150125/obj-tree-1.jpg" title="&lsquo;objects structure after initial commit&rsquo; 1024 652" ></p>
+
+<p>在此基础上，我们在根路径下新建一个目录， 并在该目录下添加一个文件，然后，我们提交修改。Git仓库的对象结构将更新为如下图所示的结构：</p>
+
+<p><img src="/images/post20150125/obj-tree-2.jpg" title="&lsquo;objects structure after updating&rsquo; 987 1022" ></p>
+
+<p>通过上面的例子，我相信大家对git中的四种对象有了更好地认识。更多Git内容将在以后的blog中继续介绍。</p>
+]]></content>
+  </entry>
+  
+</feed>

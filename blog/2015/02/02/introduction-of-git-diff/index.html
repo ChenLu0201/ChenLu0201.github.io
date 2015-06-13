@@ -1,0 +1,250 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Git Diff介绍 - Lane&#8217;s Blog</title>
+  <meta name="author" content="Chen Lu">
+
+  
+  <meta name="description" content="在我们使用VCS时，相信大家最常使用的应该是diff命令了。我们需要比较当前修改了什么，某次提交修改了什么，不同提交之间的差异是什么等各种比较。在使用Git时，也不例外。本文将介绍在Git中怎样使用Git diff，以及它的一些特殊使用方法。 Git diff命令的几种形式 git diff &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://chenlu0201.github.io/blog/2015/02/02/introduction-of-git-diff/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Lane's Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <!--script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script-->
+  <script src="/javascripts/libs/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<!--link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css" -->
+<!--link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css" -->
+<link href="/stylesheets/screen.css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="/stylesheets/screen.css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Lane&#8217;s Blog</a></h1>
+  
+    <h2>blog for life.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="chenlu0201.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Git Diff介绍</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-02-02T00:14:54+08:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>2</span><span class='date-suffix'>nd</span>, <span class='date-year'>2015</span></span> <span class='time'>12:14 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>在我们使用VCS时，相信大家最常使用的应该是diff命令了。我们需要比较当前修改了什么，某次提交修改了什么，不同提交之间的差异是什么等各种比较。在使用Git时，也不例外。本文将介绍在Git中怎样使用Git diff，以及它的一些特殊使用方法。</p>
+
+<h2>Git diff命令的几种形式</h2>
+
+<ul>
+<li><p>git diff</p>
+
+<p>比较工作路径和索引中文件的区别。他将显示工作路径下需要添加至索引中的内容。</p></li>
+<li><p>git diff commit</p>
+
+<p>比较工作路径和指定提交之间的区别。</p></li>
+<li><p>git diff -&#45;cached commit</p>
+
+<p>比较添加至索引的内容和指定提交之间的区别。</p></li>
+<li><p>git diff commit commit</p>
+
+<p>比较任意指定的两个提交之间的区别。</p></li>
+</ul>
+
+
+<p><em>通过下图我们将对以上命令的使用有更直观的了解：</em></p>
+
+<p><img class="center" src="/images/post20150202/git-diff.jpg" title="'git diff commands'" ></p>
+
+<h2>git diff使用的参数</h2>
+
+<ul>
+<li><p>&ndash;M</p>
+
+<p>只检测重命名的文件。</p></li>
+<li><p>-w or &ndash;ignore-all-space</p>
+
+<p>忽略空白字符比较。</p></li>
+<li><p>&ndash;stat</p>
+
+<p>在比较结果中添加统计信息，例如修改行数、添加行数、删除行数。</p></li>
+<li><p>&ndash;color</p>
+
+<p>对diff结果进行着色，不同类型修改会用不同的颜色来显示。</p></li>
+</ul>
+
+
+<h2>git diff与git log的区别</h2>
+
+<p><code>git diff branchA branchB</code>和<code>git diff branchA..brancheB</code>等价，比较两个分支之间的差异。<code>git log branchA..branchB</code>是显示branchB中存在，branchA中不存在的提交。</p>
+
+<h2>使用相对提交名</h2>
+
+<p>Git中，除了初始提交，其它的提交节点都有至少一个父亲节点。Git使用符号^用来表示父亲节点，使用符号~来表示前一个提交节点。例如，我们有名为C的分支，例如我们可以按以下规则来使用相对提交名：</p>
+
+<p><img class="center" src="/images/post20150202/relative-commit-1.jpg" width="800" height="600" title="'git relative commit'" ></p>
+
+<p>提交C有三个父节点,可以按如下方式来访问C^1, C^2, C^3.</p>
+
+<p><img class="center" src="/images/post20150202/relative-commit-2.jpg" width="800" height="600" title="'git relative commit'" ></p>
+
+<p>提交C的第一个父节点是C~1, 第二个父节点是C~2, 第三个父节点是C~3.</p>
+
+<p>我们可以使用<code>git diff --state master~5 master</code>来得到master分支当前与之前的第五次提交之间的diff统计数据。以上就是git diff命令使用的简要介绍。</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Lane</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2015-02-02T00:14:54+08:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>2</span><span class='date-suffix'>nd</span>, <span class='date-year'>2015</span></span> <span class='time'>12:14 am</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/git/'>git</a>, <a class='category' href='/blog/categories/git-base/'>git base</a>, <a class='category' href='/blog/categories/git-diff/'>git diff</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2015/01/25/objects-in-git/" title="Previous Post: Git中的存储对象">&laquo; Git中的存储对象</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2015/03/15/setup-environment-for-3pages-in-3weeks/" title="Next Post: 三周三页面环境搭建指南">三周三页面环境搭建指南 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/03/15/setup-environment-for-3pages-in-3weeks/">三周三页面环境搭建指南</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/02/02/introduction-of-git-diff/">Git Diff介绍</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/01/25/objects-in-git/">Git中的存储对象</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/01/18/create-blog-with-octopress/">使用Octopress创建个人blog</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Chen Lu -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
