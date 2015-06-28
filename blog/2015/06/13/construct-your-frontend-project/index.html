@@ -1,24 +1,93 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Lane's Blog]]></title>
-  <link href="http://chenlu0201.github.io/atom.xml" rel="self"/>
-  <link href="http://chenlu0201.github.io/"/>
-  <updated>2015-06-28T13:33:19+08:00</updated>
-  <id>http://chenlu0201.github.io/</id>
-  <author>
-    <name><![CDATA[Chen Lu]]></name>
-    
-  </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>使用Gulp构建前端工程 - Lane&#8217;s Blog</title>
+  <meta name="author" content="Chen Lu">
 
   
-  <entry>
-    <title type="html"><![CDATA[使用Gulp构建前端工程]]></title>
-    <link href="http://chenlu0201.github.io/blog/2015/06/13/construct-your-frontend-project/"/>
-    <updated>2015-06-13T13:23:08+08:00</updated>
-    <id>http://chenlu0201.github.io/blog/2015/06/13/construct-your-frontend-project</id>
-    <content type="html"><![CDATA[<p>   为了更好地构建弹性可伸缩应用，越来越多的系统采用前后端分离的结构。后端应用服务化，易于灵活扩展，前端则专注于数据的展现。关于前端开发，有开发经验的工程师应该有这样的经历，随着项目规模的扩大，大量的html, js, css文件将使工程变得难以维护，同时测试也会变得异常的复杂。如果你已经使用了一些工具来优化你的开发，那么你肯定需要或者已经使用了自动化的构建工具帮你处理工程编译，运行测试等重复的工作。本文将系统的介绍前端工程设计使用到的一些技术，并通过Gulp来自动化构建你的前端应用。</p>
+  <meta name="description" content="为了更好地构建弹性可伸缩应用，越来越多的系统采用前后端分离的结构。后端应用服务化，易于灵活扩展，前端则专注于数据的展现。关于前端开发，有开发经验的工程师应该有这样的经历，随着项目规模的扩大，大量的html, js, css文件将使工程变得难以维护，同时测试也会变得异常的复杂。 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://chenlu0201.github.io/blog/2015/06/13/construct-your-frontend-project/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Lane's Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <!--script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script-->
+  <script src="/javascripts/libs/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<!--link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css" -->
+<!--link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css" -->
+<link href="/stylesheets/screen.css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="/stylesheets/screen.css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Lane&#8217;s Blog</a></h1>
+  
+    <h2>blog for life.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="chenlu0201.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">使用Gulp构建前端工程</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-06-13T13:23:08+08:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>13</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>1:23 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>   为了更好地构建弹性可伸缩应用，越来越多的系统采用前后端分离的结构。后端应用服务化，易于灵活扩展，前端则专注于数据的展现。关于前端开发，有开发经验的工程师应该有这样的经历，随着项目规模的扩大，大量的html, js, css文件将使工程变得难以维护，同时测试也会变得异常的复杂。如果你已经使用了一些工具来优化你的开发，那么你肯定需要或者已经使用了自动化的构建工具帮你处理工程编译，运行测试等重复的工作。本文将系统的介绍前端工程设计使用到的一些技术，并通过Gulp来自动化构建你的前端应用。</p>
 
 <p>接下来我们先看看前端构建会涉及到的哪些内容：</p>
 
@@ -549,306 +618,107 @@
 <h2>总结</h2>
 
 <p>以上，通过梳理前端工程中常用到得技术，我们发现使用一个自动化的构建工具将为我们减少重复性的劳动，并节省大量的时间去做更有益的事。再通过Grunt和Gulp的比较，发现了Gulp的诸多优势。在实际的例子中，使用Gulp来定义任务，跟Grunt里的诸多配置参数不同，Gulp里都是JS代码，更易维护使用。最后，希望本文能激起大家对Gulp的兴趣，更多地细节还需要大家在实际使用中体会。</p>
-]]></content>
-  </entry>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
   
-  <entry>
-    <title type="html"><![CDATA[三周三页面环境搭建指南]]></title>
-    <link href="http://chenlu0201.github.io/blog/2015/03/15/setup-environment-for-3pages-in-3weeks/"/>
-    <updated>2015-03-15T12:33:51+08:00</updated>
-    <id>http://chenlu0201.github.io/blog/2015/03/15/setup-environment-for-3pages-in-3weeks</id>
-    <content type="html"><![CDATA[<p>   这次三周三页面workshop的培训内容是怎样设计和实现一个美观的web page，其中涉及到html和css的内容。作为基础，我们首先需要有一个快速的开发环境，本文将指导大家搭建一个高效的前端页面开发环境和安装一组实用的提升前端开发效率的工具。</p>
 
-<h2>环境准备</h2>
+<span class="byline author vcard">Posted by <span class="fn">Chen Lu</span></span>
 
-<ul>
-<li><p>Ruby安装</p>
-
-<p>开发环境是一个基于Ruby的工程，所以需要先安装Ruby. 由于Mac OS自带的ruby不方便管理，建议使用<code>rvm</code>(<a href="https://rvm.io/rvm/install">怎么安装rvm</a>)来管理你的<code>ruby</code>(<a href="https://rvm.io/rubies/installing">怎么安装ruby</a>)。</p></li>
-<li><p>准备开发工程</p>
-
-<p>开发的<a href="https://github.com/ChenLu0201/static-pages-boilerplate.git">模板工程</a>已经为大家准备好。这个<code>Ruby</code>工程使用基于sass的compass库。同时使用guard来实时编译工程，使我们能及时的看到最新的修改。Fork并Clone到本地之后，在根路径下执行<code>bundle install</code>来执行一些初始化操作。</p></li>
-</ul>
+      
 
 
-<h2>工具安装</h2>
-
-<ul>
-<li><p>sublime编辑器</p>
-
-<p> <a href="http://www.sublimetext.com/3">Sublime</a>是一个非常好用的，现代的，跨平台的编辑器，你可以在Windows，Linux以及Mac OSX上使用它。虽然它不是免费的，但是如果你不购买，功能上没有任何的限制（除了不定时的弹出一个对话框外）。同时，它非常易于扩展。
- 当你下载并安装完sublime之后，我们首先需要安装<a href="https://sublime.wbond.net/installation">Packge Control</a>来管理其它插件。安装了Package Control之后，我们来安装以下插件：</p>
-
-<ol>
-<li><a href="http://emmet.io/">Emmet</a>(The Essential Toolkit for Web-developers)</li>
-<li><a href="https://github.com/victorporof/Sublime-HTMLPrettify">HTML-CSS-JS Prettify</a>(HTML/CSS/JS Formatter)</li>
-<li><a href="http://www.jisaacks.com/gitgutter">GitGutter</a>（在sublime的编辑窗口显示文本的git状态）</li>
-</ol>
 
 
-<p> 安装插件非常容易，<code>command + shift + p</code>打开命令行窗口，输入<code>install package</code>:</p></li>
-</ul>
+<time class='entry-date' datetime='2015-06-13T13:23:08+08:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>13</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>1:23 pm</span></time>
+      
 
-
-<p><img class="center" src="http://chenlu0201.github.io/images/post20150315/command+shift+p.jpg" width="800" height="600" title="'open cmd on sublime'" ></p>
-
-<p>   然后输入需要安装的插件名称:</p>
-
-<p><img class="center" src="http://chenlu0201.github.io/images/post20150315/install-package.jpg" width="800" height="600" title="'install package'" ></p>
-
-<ul>
-<li><p>LiveReload</p>
-
-<p>这是一个浏览器插件，能实时的刷新页面来查看修改。在chrome上，我们可以在extensions中搜索并安装它:</p></li>
-</ul>
-
-
-<p><img class="center" src="http://chenlu0201.github.io/images/post20150315/install-livereload.jpg" width="800" height="600" title="'install liveReload'" ></p>
-
-<p>完成以上步骤，大家的开发环境也就搭建好了，现在我们可以开动起来实现自己的页面了。</p>
-]]></content>
-  </entry>
+<span class="categories">
   
-  <entry>
-    <title type="html"><![CDATA[Git Diff介绍]]></title>
-    <link href="http://chenlu0201.github.io/blog/2015/02/02/introduction-of-git-diff/"/>
-    <updated>2015-02-02T00:14:54+08:00</updated>
-    <id>http://chenlu0201.github.io/blog/2015/02/02/introduction-of-git-diff</id>
-    <content type="html"><![CDATA[<p>在我们使用VCS时，相信大家最常使用的应该是diff命令了。我们需要比较当前修改了什么，某次提交修改了什么，不同提交之间的差异是什么等各种比较。在使用Git时，也不例外。本文将介绍在Git中怎样使用Git diff，以及它的一些特殊使用方法。</p>
-
-<h2>Git diff命令的几种形式</h2>
-
-<ul>
-<li><p>git diff</p>
-
-<p>比较工作路径和索引中文件的区别。他将显示工作路径下需要添加至索引中的内容。</p></li>
-<li><p>git diff commit</p>
-
-<p>比较工作路径和指定提交之间的区别。</p></li>
-<li><p>git diff -&#45;cached commit</p>
-
-<p>比较添加至索引的内容和指定提交之间的区别。</p></li>
-<li><p>git diff commit commit</p>
-
-<p>比较任意指定的两个提交之间的区别。</p></li>
-</ul>
-
-
-<p><em>通过下图我们将对以上命令的使用有更直观的了解：</em></p>
-
-<p><img class="center" src="http://chenlu0201.github.io/images/post20150202/git-diff.jpg" title="'git diff commands'" ></p>
-
-<h2>git diff使用的参数</h2>
-
-<ul>
-<li><p>&ndash;M</p>
-
-<p>只检测重命名的文件。</p></li>
-<li><p>-w or &ndash;ignore-all-space</p>
-
-<p>忽略空白字符比较。</p></li>
-<li><p>&ndash;stat</p>
-
-<p>在比较结果中添加统计信息，例如修改行数、添加行数、删除行数。</p></li>
-<li><p>&ndash;color</p>
-
-<p>对diff结果进行着色，不同类型修改会用不同的颜色来显示。</p></li>
-</ul>
-
-
-<h2>git diff与git log的区别</h2>
-
-<p><code>git diff branchA branchB</code>和<code>git diff branchA..brancheB</code>等价，比较两个分支之间的差异。<code>git log branchA..branchB</code>是显示branchB中存在，branchA中不存在的提交。</p>
-
-<h2>使用相对提交名</h2>
-
-<p>Git中，除了初始提交，其它的提交节点都有至少一个父亲节点。Git使用符号^用来表示父亲节点，使用符号~来表示前一个提交节点。例如，我们有名为C的分支，例如我们可以按以下规则来使用相对提交名：</p>
-
-<p><img class="center" src="http://chenlu0201.github.io/images/post20150202/relative-commit-1.jpg" width="800" height="600" title="'git relative commit'" ></p>
-
-<p>提交C有三个父节点,可以按如下方式来访问C^1, C^2, C^3.</p>
-
-<p><img class="center" src="http://chenlu0201.github.io/images/post20150202/relative-commit-2.jpg" width="800" height="600" title="'git relative commit'" ></p>
-
-<p>提交C的第一个父节点是C~1, 第二个父节点是C~2, 第三个父节点是C~3.</p>
-
-<p>我们可以使用<code>git diff --state master~5 master</code>来得到master分支当前与之前的第五次提交之间的diff统计数据。以上就是git diff命令使用的简要介绍。</p>
-]]></content>
-  </entry>
+    <a class='category' href='/blog/categories/qian-duan-gou-jian-qian-duan-zi-dong-hua-ce-shi/'>前端 构建 前端自动化测试</a>
   
-  <entry>
-    <title type="html"><![CDATA[Git中的存储对象]]></title>
-    <link href="http://chenlu0201.github.io/blog/2015/01/25/objects-in-git/"/>
-    <updated>2015-01-25T14:49:06+08:00</updated>
-    <id>http://chenlu0201.github.io/blog/2015/01/25/objects-in-git</id>
-    <content type="html"><![CDATA[<p>2005年，由于linux内核开发团队当时使用的BitKeeper VCS不能满足需要，Linus希望找到一个VCS能满足足以下需求：</p>
-
-<ul>
-<li>Facilitate Distributed Development</li>
-<li>Scale to Handle Thousands of Developers</li>
-<li>Perform Quickly and Eficiently</li>
-<li>Maintain Integrity and Trust</li>
-<li>Enforce Accoutablility</li>
-<li>Immutability</li>
-<li>Atomic Transactions</li>
-<li>Support and Encourage Branched Development</li>
-<li>Complete Repositories</li>
-<li>A Clean Internal Design</li>
-<li>Be Free</li>
-</ul>
+</span>
 
 
-<p>遗憾找不到合适可用的VCS。最后开发团队决定开发自己的VCS系统，也就是后来的Git。 本篇接下来将介绍使Git具有以上特性的基础 &ndash; Git的存储对象模型。</p>
-
-<h2>Git仓库（Git Repository）</h2>
-
-<p>Git仓库是一个记录和管理工程版本和历史的数据仓库。Git与其它VCSs的区别在于它不仅有工作目录所有内容的拷贝，还有使Git工作的仓库拷贝。同时还对每个站点，每个用户，每个仓库维护了一组配置信息。Git仓库维护了两种基础的数据结构：对象存储和索引，所有的文件都存储在工作目录的跟路径的.git目录下。Git的对象存储经过了精心的设计，能支持分布式的高效拷贝；Git索引用来存储每个本地仓库自己的临时数据，可以根据用户的需要灵活的更改。</p>
-
-<h2>Git对象类型</h2>
-
-<ul>
-<li>Blobs</li>
-</ul>
-
-
-<p>一个Blob对象代表了一个文件某个版本的内容。在计算中，我们需要引用到一些变量和文件，但是又不关心内部的具体数据时，我们经常用<code>Blob</code>[binary large object]来存储数据。Blob数据只存储文件的内容，而不存储任何文件相关的元数据，包括文件名。</p>
-
-<ul>
-<li>Trees</li>
-</ul>
-
-
-<p>一个Tree对象代表了一层目录的信息。它记录了blob对象的标识，路径名和当前目录的一些元数据。它同时可以递归的应用其他的Subtree对象。因此它维护了完成的文件和路径的完整结构。</p>
-
-<ul>
-<li>Commits</li>
-</ul>
-
-
-<p>一个Commit对象存储了对仓库引入的一次修改的元数据，它包括作者，提交人，提交日期，日志信息。每个Commit对象指向了包含工作仓库最新状态完整快照的Tree对象。最初的提交没有父节点，大部分提交都有一个父节点，也有存在两个父节点的情况（比如在merge的情况下）。</p>
-
-<ul>
-<li>Tags</li>
-</ul>
-
-
-<p>一个Tag用来给其它对象指定一个可读的名字，通常是一个Commit。虽然<code>9da581ae67f765c8aac675de87f54a3c5ef6da</code>引用了一个具体的Commit,使用一个更可读的Tag,例如Ver-1.0-Alpha，会更方便。</p>
-
-<h2>Index</h2>
-
-<p>Index是用来描述整个仓库目录结构的，临时、动态的二进制文件。更具体一点讲，Index包含某一时刻整个工程全部结构。整个工程的状态可以由工程历史中任意时间的一个Commit对象和一个Tree对象来获取。Git区别于其它VCS的一个核心特性是它提供了设计良好的方法来修改Index。Index同时能将增量开发和提交的内容区分开来。一般，开发人员会频繁的修改、删除、回退文件，Index用来记录那些已经修改完毕，并可以用于提交的内容，同时也可以从Index中取消修改。被Index记录的文件，才会被提交到远程仓库。</p>
-
-<p>接下来，我们来通过一个例子来看看git的对象是怎么工作的。在我们的根路径下有两个文件，我们进行第一次提交，并为第一次提交指定一个tag。git对象的结构将会按下图的结构进行组织:</p>
-
-<p><img src="http://chenlu0201.github.io/images/post20150125/obj-tree-1.jpg" title="'objects structure after initial commit' 1024 652" ></p>
-
-<p>在此基础上，我们在根路径下新建一个目录， 并在该目录下添加一个文件，然后，我们提交修改。Git仓库的对象结构将更新为如下图所示的结构：</p>
-
-<p><img src="http://chenlu0201.github.io/images/post20150125/obj-tree-2.jpg" title="'objects structure after updating' 987 1022" ></p>
-
-<p>通过上面的例子，我相信大家对git中的四种对象有了更好地认识。更多Git内容将在以后的blog中继续介绍。</p>
-]]></content>
-  </entry>
+    </p>
+    
+      <div class="sharing">
   
-  <entry>
-    <title type="html"><![CDATA[使用Octopress创建个人blog]]></title>
-    <link href="http://chenlu0201.github.io/blog/2015/01/18/create-blog-with-octopress/"/>
-    <updated>2015-01-18T13:02:35+08:00</updated>
-    <id>http://chenlu0201.github.io/blog/2015/01/18/create-blog-with-octopress</id>
-    <content type="html"><![CDATA[<p><a href="http://octopress.org/">Octopress</a>是基于Jekyll的静态博客引擎，并支持将博客发布到<a href="https://pages.github.com/">Github Pages</a>, Heroku和Rsync. 本文将指导大家使用Octopress搭建属于你自己的博客系统，并发布到<a href="https://pages.github.com/">Github Pages</a>上。</p>
-
-<h2>环境设置</h2>
-
-<ol>
-<li>安装<a href="http://http://git-scm.com/">Git</a></li>
-<li>安装Ruby 1.9.3或者更高版本。可以使用<a href="http://octopress.org/docs/setup/rbenv/">rbenv</a>或者<a href="http://http://octopress.org/docs/setup/rvm/">RVM</a>安装ruby。如果<code>ruby --verion</code>显示你的版本不是或者高于1.9.2，请参考使用<a href="http://octopress.org/docs/setup/rbenv/">rbenv</a>或者<a href="http://http://octopress.org/docs/setup/rvm/">RVM</a>安装Ruby</li>
-<li>下载Octopress</li>
-</ol>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git://github.com/imathis/octopress.git octopress
-</span><span class='line'>cd octopress</span></code></pre></td></tr></table></div></figure>
-
-
-<p>然后，安装依赖</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>gem install bundler
-</span><span class='line'>rbenv rehash    # If you use rbenv, rehash to be able to run the bundle command
-</span><span class='line'>bundle install</span></code></pre></td></tr></table></div></figure>
-
-
-<p>安装默认的主题</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake install</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>部署blog到Github pages上</h2>
-
-<p>这里将使用Github User/Organization pages来部署blog. 首先创建一个新的Github仓库，仓库的命名格式是<code>username.github.io</code>。<code>username</code>是你的Github账户名。创建好仓库后，我们在上面克隆的octopress目录下执行</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake setup_github_pages</span></code></pre></td></tr></table></div></figure>
-
-
-<p>这个任务将提示你输入刚才的仓库地址。它帮你完成了以下工作：</p>
-
-<ol>
-<li>提示用户输入并存储远程仓库路径。</li>
-<li>将本地仓库的git remote做调整，imathis/octopress将有origin变为octopress.</li>
-<li>将输入的仓库地址设置为defalut origin remote.</li>
-<li>将本地分支从master切换到source上。</li>
-<li>根据仓库地址配置blog url。</li>
-<li>在_deploy目录下配置部署用的master分支。</li>
-</ol>
-
-
-<p>接下来执行</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake generate
-</span><span class='line'>rake deploy</span></code></pre></td></tr></table></div></figure>
-
-
-<p>将为你生成blog的静态页面，并拷贝到_deploy目录下， 同时部署到仓库的master分支上。当提交完你的blog site后， 请不要忘记将blog的源码提交到仓库，做好备份。</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git add .
-</span><span class='line'>git commit -m "your message"
-</span><span class='line'>git push origin source</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>写一篇新博客</h2>
-
-<p>octopress提供了一个rake task为你按照约定的命名规则创建一篇blog post.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake new_post["title"]</span></code></pre></td></tr></table></div></figure>
-
-
-<p><code>new_post</code>需要指定post的标题，缺省的post模板类型是<code>markdown</code>.</p>
-
-<p><strong>Example:</strong></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake new_post["my new post"]
-</span><span class='line'># Creates source/_posts/2015-01-18-my-new-post.markdown</span></code></pre></td></tr></table></div></figure>
-
-
-<p>如果你已经编辑好了你的post，接下来执行rake generate; rake deploy之后，访问<code>https://username.github.io</code>,你将看到自己的blog主页。
-到此，你就掌握了怎样使用octopress搭建自己的blog系统。 当然让后续还有很多工作要做，比如配置个性化的域名，设计个性化的主题，为blog添加评论系统等。后续将逐渐补充。</p>
-
-<p>更多详细内容，请参考<a href="http://octopress.org/">Octopress</a>主页。</p>
-]]></content>
-  </entry>
   
-</feed>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2015/03/15/setup-environment-for-3pages-in-3weeks/" title="Previous Post: 三周三页面环境搭建指南">&laquo; 三周三页面环境搭建指南</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/06/13/construct-your-frontend-project/">使用Gulp构建前端工程</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/03/15/setup-environment-for-3pages-in-3weeks/">三周三页面环境搭建指南</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/02/02/introduction-of-git-diff/">Git Diff介绍</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/01/25/objects-in-git/">Git中的存储对象</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/01/18/create-blog-with-octopress/">使用Octopress创建个人blog</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Chen Lu -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
